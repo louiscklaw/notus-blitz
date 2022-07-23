@@ -1,11 +1,11 @@
+import { Link } from "blitz"
 import React from "react"
-import Link from "next/link"
 
 // layout for page
 
-// import Auth from "layouts/Auth.js";
+import Auth from "../layouts/Auth.js"
 
-export default function Login() {
+export default function TestLogin() {
   return (
     <>
       <div className="container mx-auto px-4 h-full">
@@ -104,3 +104,4 @@ export default function Login() {
 }
 
 // Login.layout = Auth;
+TestLogin.getLayout = (page) => <Auth>{page}</Auth>
