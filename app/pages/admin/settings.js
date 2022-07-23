@@ -7,7 +7,7 @@ import CardProfile from "../../components/Cards/CardProfile.js"
 
 // layout for page
 
-import Admin from "layouts/Admin.js"
+import Admin from "../../layouts/Admin.js"
 
 export default function Settings() {
   return (
@@ -24,4 +24,6 @@ export default function Settings() {
   )
 }
 
-Settings.layout = Admin
+// Settings.layout = Admin
+
+Settings.getLayout = (page) => <Admin>{page}</Admin>
