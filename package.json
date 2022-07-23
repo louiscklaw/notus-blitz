@@ -2,7 +2,7 @@
   "name": "notus-blitz",
   "version": "1.0.0",
   "scripts": {
-    "dev": "blitz dev",
+    "dev:blitz": "blitz dev",
     "build": "blitz build",
     "start": "blitz start",
     "studio": "blitz prisma studio",
@@ -12,7 +12,10 @@
     "prepare": "husky install",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run dev",
     "build:tailwind": "tailwind build app/styles/index.css -o app/styles/tailwind.css",
-    "dev:tailwind": "nodemon --watch app/styles/index.css --exec \"yarn build:tailwind\""
+    "gitSync": "git fetch --all && git stash && git pull --all && git stash pop || true",
+    "gitUpdate": "git add . && git commit -m \"update notus-blitz,\" && yarn gitSync && git push",
+    "dev:tailwind": "nodemon --watch app/styles/index.css --exec \"yarn build:tailwind\"",
+    "dev": "npx npm-run-all -p dev:*"
   },
   "prisma": {
     "schema": "db/schema.prisma"
