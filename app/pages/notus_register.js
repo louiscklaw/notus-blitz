@@ -1,10 +1,11 @@
+import { Link } from "blitz"
 import React from "react"
 
 // layout for page
 
 import Auth from "../layouts/Auth.js"
 
-export default function NotusRegister() {
+export default function NotusLogin() {
   return (
     <>
       <div className="container mx-auto px-4 h-full">
@@ -98,6 +99,20 @@ export default function NotusRegister() {
                 </form>
               </div>
             </div>
+            <div className="flex flex-wrap mt-6 relative">
+              <div className="w-1/2">
+                <a href="#pablo" onClick={(e) => e.preventDefault()} className="text-blueGray-200">
+                  <small>Forgot password?</small>
+                </a>
+              </div>
+              <div className="w-1/2 text-right">
+                <Link href="/auth/register">
+                  <a href="#pablo" className="text-blueGray-200">
+                    <small>Create new account</small>
+                  </a>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -105,4 +120,5 @@ export default function NotusRegister() {
   )
 }
 
-NotusRegister.layout = (page) => <Auth>{page}</Auth>
+// Login.layout = Auth;
+NotusLogin.getLayout = (page) => <Auth>{page}</Auth>
