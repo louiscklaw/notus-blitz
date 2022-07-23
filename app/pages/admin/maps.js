@@ -6,7 +6,7 @@ import MapExample from "../../components/Maps/MapExample.js"
 
 // layout for page
 
-import Admin from "layouts/Admin.js"
+import Admin from "../../layouts/Admin.js"
 
 export default function Maps() {
   return (
@@ -22,4 +22,4 @@ export default function Maps() {
   )
 }
 
-Maps.layout = Admin
+Maps.getLayout = (page) => <Admin>{page}</Admin>
